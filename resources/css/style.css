@@ -1,0 +1,228 @@
+:root {
+  --primary-color: #18ffff;
+  --primary-color-darker: #13d8d8;
+  --secondary-color: #ffffff;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "PT Sans", sans-serif;
+  font-size: 1rem;
+  height: 100vh;
+  width: 100vw;
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+.content::before {
+  content: "";
+  display: block;
+  width: 70vw;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #000000;
+  position: absolute;
+  opacity: 0.8;
+  z-index: 0;
+}
+
+.content::after {
+  content: "";
+  display: block;
+  width: 30vw;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: var(--primary-color);
+  position: absolute;
+  z-index: 0;
+}
+
+.content {
+  color: var(--secondary-color);
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-image: url(./../images/computer.jpg);
+  background-size: cover;
+}
+
+.content > * {
+  z-index: 10;
+}
+
+.wrapper {
+  position: relative;
+  padding: 0 15px;
+  height: 100%;
+}
+
+.profile {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+}
+
+.profile > .resume {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: calc(70% - 1025px);
+}
+
+.profile > .resume > h1 {
+  color: var(--primary-color);
+  font-size: 7rem;
+  padding: 0;
+}
+
+.profile > .resume > .picture {
+  position: absolute;
+  right: calc(100% - (70% + 225px));
+}
+
+.profile > .resume > .picture > img {
+  position: relative;
+  /* width: 200px;
+  height: 200px; */
+  width: 420px;
+  height: 420px;
+  /* border: 5px var(--primary-color-darker) solid; */
+  border: 10px var(--primary-color-darker) solid;
+  background-color: #ffffff;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile > .resume > p {
+  font-size: 2rem;
+  margin-top: -1.8rem;
+}
+
+.profile > .resume > p > .name {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.profile > .resume > .icons {
+  font-size: 3.5rem;
+}
+
+.profile > .resume > .icons > a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  transition: color 0.3s, font-size 0.5s;
+}
+
+.profile > .resume > .icons > a:hover {
+  color: var(--primary-color);
+  font-size: 2.3rem;
+}
+
+@media (max-width: 1650px) {
+  .profile > .resume {
+    margin-left: calc(70% - 760px);
+  }
+
+  .profile > .resume > h1 {
+    font-size: 5rem;
+  }
+
+  .profile > .resume > p {
+    font-size: 1.2rem;
+    margin-top: -1.4rem;
+  }
+
+  .profile > .resume > .picture {
+    right: calc(100% - (70% + 174px));
+  }
+
+  .profile > .resume > .picture > img {
+    width: 320px;
+    height: 320px;
+  }
+
+  .profile > .resume > .icons {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .content::before {
+    width: 75vw;
+  }
+
+  .content::after {
+    width: 25vw;
+  }
+
+  .profile > .resume > .picture {
+    position: absolute;
+    right: calc(100% - (75% + 174px));
+  }
+
+  .profile > .resume {
+    margin-left: calc(75% - 640px);
+  }
+}
+
+@media (max-width: 920px) {
+  .profile > .resume {
+    margin-left: 15px;
+    width: calc(70% - 160px);
+  }
+}
+
+@media (max-width: 700px) {
+  .profile {
+    justify-content: center;
+  }
+
+  .profile > .resume {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .profile > .resume > .picture {
+    margin: 0 0 30px 0;
+  }
+
+  .profile > .resume > p {
+    text-align: center;
+  }
+
+  .profile > .resume > .picture {
+    position: relative;
+    right: unset;
+  }
+
+  .profile > .resume > .picture > img {
+    width: 200px;
+    height: 200px;
+    border: 5px var(--primary-color-darker) solid;
+  }
+
+  .content::before {
+    width: 100vw;
+  }
+
+  .content::after {
+    display: none;
+  }
+}
